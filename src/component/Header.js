@@ -1,38 +1,39 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { styled } from 'styled-components';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container,Button,NavDropdown,Form,Offcanvas } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
-const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  height: 12vh;
-  width: 100vw;
-  background-color: tomato;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+const StyleHeader = styled.header`
+ background-color: white;
+ position: fixed;
+ top: 0;
+ width: 100%;
+ height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+`;
+const StyledUL = styled.ul`
+  list-style-type: none;
 `;
 
-function Navi(){
-    return(
-        <Navbar bg="primary" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    );
-}
-
+const StyledLI = styled.li`
+  display: inline;
+  margin-right: 10px;
+`;
 const Header = () => {
-  return <StyledHeader>
-    <Navi/>
-  </StyledHeader>;
+  return (
+   <StyleHeader>
+    <Link to='/'>dsa</Link>
+    <Link to='/test'>dsa</Link>
+    <StyledUL><StyledLI><Link to='/'>dsa</Link></StyledLI>
+    <StyledLI><Link to='/'>dsa</Link></StyledLI>
+    </StyledUL> 
+   </StyleHeader>
+  );
 };
 
 export default Header;
